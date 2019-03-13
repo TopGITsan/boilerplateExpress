@@ -17,12 +17,12 @@ console.log("Hello World");
 // });
 
 /** 3) Serve an HTML file */
-app.get('/', function(req,res){      //  This method needs an absolute file path   e.g. absolutePath = __dirname + relativePath/file.ext.
-    res.sendPath(__dirname+ 'views/index.html');  // use the Node global variable __dirname to calculate the path.
+app.get('/', function (req, res) {      //  This method needs an absolute file path   e.g. absolutePath = __dirname + relativePath/file.ext.
+    res.sendPath(__dirname + 'views/index.html');  // use the Node global variable __dirname to calculate the path.
 });
 
 /** 4) Serve static assets  */
-
+app.use(express.static(__dirname + '/public'));  //  app.use(path, middlewareFunction). The first path argument is optional. If you don’t pass it, the middleware will be executed for all the requests.  
 
 /** 5) serve JSON on a specific route */
 
