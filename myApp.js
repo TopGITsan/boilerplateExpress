@@ -25,7 +25,9 @@ app.get('/', function (req, res) {      //  This method needs an absolute file p
 app.use(express.static(__dirname + '/public'));  //  app.use(path, middlewareFunction). The first path argument is optional. If you don’t pass it, the middleware will be executed for all the requests.  
 
 /** 5) serve JSON on a specific route */
-
+app.get('/json', function (req, res) {
+    res.json({ 'message': 'Hello json' });
+});
 
 /** 6) Use the .env file to configure the app */
  
