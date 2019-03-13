@@ -13,5 +13,12 @@
 	},
 	"engines": {
 		"node": "4.4.5"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TopGITsan/boilerplateExpress.git"
+	},
+	"glitch":{
+		"url": "https://glitch.com/edit/#!/stupendous-rake?path=myApp.js:1:0"
 	}
 }
