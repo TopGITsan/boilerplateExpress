@@ -12,12 +12,14 @@ var app = express();
 console.log("Hello World");
 
 /** 2) A first working Express Server */
-app.get('/',function(req,res){
-    res.send('Hello Express');
-});
+// app.get('/',function(req,res){
+//     res.send('Hello Express');
+// });
 
 /** 3) Serve an HTML file */
-
+app.get('/', function(req,res){      //  This method needs an absolute file path   e.g. absolutePath = __dirname + relativePath/file.ext.
+    res.sendPath(__dirname+ 'views/index.html');  // use the Node global variable __dirname to calculate the path.
+});
 
 /** 4) Serve static assets  */
 
