@@ -16,6 +16,12 @@ console.log("Hello World");
 //     res.send('Hello Express');
 // });
 
+/** 7) Root-level Middleware - A logger */
+//  place it before all the routes !
+app.use(function(req,res,next){
+    console.log(req.method+' '+req.path+' - '+req.ip);
+});
+
 /** 3) Serve an HTML file */
 app.get('/', function (req, res) {      //  This method needs an absolute file path   e.g. absolutePath = __dirname + relativePath/file.ext.
     res.sendPath(__dirname + 'views/index.html');  // use the Node global variable __dirname to calculate the path.
@@ -26,15 +32,13 @@ app.use(express.static(__dirname + '/public'));  //  app.use(path, middlewareFun
 
 /** 5) serve JSON on a specific route */
 app.get('/json', function (req, res) {
-    process.env.MESSAGE_STYLE === 'uppercase' ? res.json({ 'message': 'HELLO JSON' }) : res.json({ 'message': 'Hello json' });
+    res.json({ 'message': 'Hello json' });
 });
 
 /** 6) Use the .env file to configure the app */
- 
- 
-/** 7) Root-level Middleware - A logger */
-//  place it before all the routes !
-
+app.get('/json', function (req, res) {
+    process.env.MESSAGE_STYLE === 'uppercase' ? res.json({ 'message': 'HELLO JSON' }) : res.json({ 'message': 'Hello json' });
+});
 
 /** 8) Chaining middleware. A Time server */
 
