@@ -40,7 +40,13 @@ app.get('/json', function (req, res) {
     process.env.MESSAGE_STYLE === 'uppercase' ? res.json({ 'message': 'HELLO JSON' }) : res.json({ 'message': 'Hello json' });
 });
 
-/** 8) Chaining middleware. A Time server */
+/** 8) Chaining middleware. A Time server */ // This approach is useful to split the server operations into smaller units. 
+app.get('/now', function(req,res,next){
+    req.time = new Date().toString();
+    next();
+},function(req,res){
+    res.send({time: req.time});
+});
 
 
 /** 9)  Get input from client - Route parameters */
