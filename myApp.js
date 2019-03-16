@@ -60,10 +60,10 @@ app.get('/:word/echo', function (req, res) {
 //     let firstname = req.query.first, lastname = req.query.last;
 //     res.json({ name: firstname + ' ' + lastname });
 // });
-app.route('/name').get(function(req,res){
+app.route('/name').get(function (req, res) {
     let firstName = req.query.first, lastName = req.query.last;
-    res.json({name: firstName+' '+lastName});
-}).post(function(req,res){
+    res.json({ name: firstName + ' ' + lastName });
+}).post(function (req, res) {
     res.json(req.body);
 });
 

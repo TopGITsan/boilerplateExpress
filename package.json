@@ -1,15 +1,16 @@
 {
 	"name": "fcc-learn-node-with-express",
 	"version": "0.1.0",
+	"license": "MIT",
 	"dependencies": {
 		"express": "^4.14.0",
 		"body-parser": "^1.15.2",
 		"cookie-parser": "^1.4.3",
-		"fcc-express-bground": "https://github.com/Em-Ant/fcc-express-bground-pkg.git"
+		"dotenv": "^7.0.0"
 	},
 	"main": "server.js",
 	"scripts": {
-		"start": "node server.js"
+		"start": "node App.js"
 	},
 	"engines": {
 		"node": "4.4.5"
@@ -18,7 +19,7 @@
 		"type": "git",
 		"url": "https://github.com/TopGITsan/boilerplateExpress.git"
 	},
-	"glitch":{
+	"glitch": {
 		"url": "https://glitch.com/edit/#!/stupendous-rake?path=myApp.js:1:0"
 	}
 }
